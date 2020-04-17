@@ -30,7 +30,7 @@ public class Application implements CommandLineRunner {
         System.out.println("Sending Email...");
 
         try {
-            sendEmail();
+            //sendEmail();
             sendEmailWithAttachment();
 
         } catch (MessagingException e) {
@@ -61,7 +61,8 @@ public class Application implements CommandLineRunner {
 
         // true = multipart message
         MimeMessageHelper helper = new MimeMessageHelper(msg, true);
-        helper.setTo("saimon.ctg@gmail.com");
+        String[] strings = {"saimon.ctg@gmail.com", "ahsaimon.ctg@gmail.com"};
+        helper.setTo(strings);
 
         helper.setSubject("Testing from Spring Boot");
 
@@ -79,6 +80,7 @@ public class Application implements CommandLineRunner {
         //ResourceUtils.getFile("classpath:android.png");
 
         helper.addAttachment("my_photo.png", new ClassPathResource("android.png"));
+        helper.addAttachment("my_photo2.png", new ClassPathResource("android2.png"));
 
         javaMailSender.send(msg);
 
