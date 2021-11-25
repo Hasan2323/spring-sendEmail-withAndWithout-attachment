@@ -72,7 +72,19 @@ public class Application implements CommandLineRunner {
         // true = text/html
         helper.setText("<h1>Check attachment for image!</h1>", true);
 
+        //FileSystemResource file = new FileSystemResource(new File("c:/Sample.jpg"));
+        //helper.addAttachment("CoolImage.jpg", file);
+
+        //FileSystemResource fr = new FileSystemResource(file);
+        //helper.addAttachment(file.getName(), fr);
+
+        //FileSystemResource file = new FileSystemResource(new File(pathToAttachment));
+        //helper.addAttachment("Invoice", file);
+
         //FileSystemResource file = new FileSystemResource(new File("classpath:android.png"));
+
+        //ClassPathResource classPathResource = new ClassPathResource("Attachment.pdf");
+        //helper.addAttachment(classPathResource.getFilename(), classPathResource);
 
         //Resource resource = new ClassPathResource("android.png");
         //InputStream input = resource.getInputStream();
